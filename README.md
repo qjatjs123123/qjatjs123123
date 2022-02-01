@@ -25,10 +25,16 @@
   <img src="https://img.shields.io/badge/unity-003545?style=for-the-badge&logo=unity&logoColor=white">
 </p>
 
-#### Github Stats
-[![Anurag's github stats](https://github-readme-stats.vercel.app/api?username=qjatjs123123)](https://github.com/anuraghazra/github-readme-stats)
+#### Study
+<p>
+  <img src="https://img.shields.io/badge/Unreal Engine-0E1128?style=for-the-badge&logo=Unreal Engine&logoColor=white"> 
+  <img src="https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=C++&logoColor=white">
+</p>
 
-#### Most Language
+
+### 🔭 Github Stats
+[![Anurag's github stats](https://github-readme-stats.vercel.app/api?username=qjatjs123123)](https://github.com/anuraghazra/github-readme-stats)
+### 💬 Most Language
 [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=qjatjs123123)](https://github.com/anuraghazra/github-readme-stats)
 
 <!--
