@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>About</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <style>
+@font-face { font-family: 'RIDIBatang'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff') format('woff'); font-weight: normal; font-style: normal; }
+
+/* reset */
+* {margin: 0; padding: 0; box-sizing:border-box;}
+a {text-decoration: none;}
+li {list-style: none;}
+img {display: block;}
+
+
+
+/*slide*/
+.slide_wrap {}
+.slide_show {
+  width: 1300px; height: 360px; overflow: hidden;
+  
+  left: 0; top: 0; right: 0; bottom: 0; margin: auto;
+}
+.slide_show .slide_list {
+  position: relative;
+  overflow:hidden; width: 4000px; height: 360px;
+}
+.slide_show .slide_list > div {
+  float: left; width: 400px; padding: 15px; height: 300px;
+  box-sizing: content-box; position: relative;
+}
+.slide_show .slide_list > div:before {
+  position: absolute; left: 10px; top: 10px; color: #fff;
+  font-family: 'RIDIBatang';
+}
+.slide_list > div:nth-child(6n+1)::before {content:'01'; margin-left: 1rem; margin-top: 1px; font-size: large; color:black}
+.slide_list > div:nth-child(6n+2)::before {content:'02' ; margin-left: 1rem; margin-top: 1px; font-size: large; color:black}
+.slide_list > div:nth-child(6n+3)::before {content:'03' ; margin-left: 1rem; margin-top: 1px; font-size: large; color:black}
+.slide_list > div:nth-child(6n+4)::before {content:'04'; margin-left: 1rem; margin-top: 1px; font-size: large; color:black}
+.slide_list > div:nth-child(6n+5)::before {content:'05'; margin-left: 1rem; margin-top: 1px; font-size: large; color:black}
+.slide_list > div:nth-child(6n+6)::before {content:'06'; margin-left: 1rem; margin-top: 1px; font-size: large; color:black}
+.slide_show .slide_list > div img {width: 100%;}
+.slide{
+
+    cursor: pointer;
+  position: relative;
+  display: block;
+  max-width: 25rem;
+  border-radius: 0.5rem;
+
+}
+.slide_btn {  left: 50%; text-align: center; }
+.slide_btn button {
+  background: rgba(0,0,0,.4);
+  border: 1px solid rgba(255,255,255,0.4);
+  color: #fff;
+  border-radius: 50%;
+  width: 50px; height: 50px;
+  cursor: pointer;
+}
+.slide_btn button:hover {
+  background: rgba(0,0,0,.8);;
+}
+.slide_btn .prev {}
+.slide_btn .next {}
+    </style>
+    <script>
+        $(document).ready(function() {
+    let slideWrap = $(".slide_wrap");
+    slideShow = slideWrap.find(".slide_show");
+    slideList = slideShow.find(".slide_list");
+    slides = slideList.find(".portfolio-item");
+    slideBtn = slideWrap.find(".slide_btn");
+    let slideCount = slides.length,
+    slideWidth = slides.innerWidth(),
+    showNum = 6,
+    num = 0,
+    currentIndex = 0,
+    
+    slideCopy = $(".slide:lt("+ showNum +")").clone();
+    slideList.append(slideCopy);
+            //왼쪽, 오른쪽 버튼 설정
+slideBtn.on("click","button",function(){
+  if( $(this).hasClass("prev")){
+    //왼쪽 버튼을 클릭
+    backShow();
+  } else {
+    //오른쪽 버튼을 클릭
+
+    nextShow();
+  }
+});
+//이미지 움직이기
+function backShow(){
+  if( num == 0 ){
+    //시작
+    num= slideCount;
+    slideList.css("left", -num * (slideWidth+7) + "px");
+  }
+  num--;
+  slideList.stop().animate({ left : -(slideWidth+7) * num +"px"}, 400);
+}
+
+function nextShow(){
+    flg = false;
+  if( num == slideCount-1){
+    //마지막
+    num= 0;
+    slideList.css("right", 0 + "px");
+    flg=true;
+  }
+  if(flg == false){
+    num++;
+  }
+  
+  slideList.stop().animate({ left : -(slideWidth+7) * num +"px"}, 400);
+  
+}
+
+});
+
+
+
+
+        window.onload = function(){
+            
+            document.getElementsByClassName("bg-secondary")[0].style['background-color'] = 'rgba(0, 0, 0, 0)';  
+        }
+         window.addEventListener('scroll', function(){
+                if(window.scrollY == 0){
+                    document.getElementsByClassName("bg-secondary")[0].style['background-color'] = 'rgba(0, 0, 0, 0)';                      
+                }
+                else{
+                    document.getElementsByClassName("bg-secondary")[0].style['background-color'] = 'rgba(0, 0, 0, 0.5)';  
+                }
+            });
+
+        
+
+
+    </script>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand" href="#page-top">portfolio</a>
+                <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">About</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#skill">Skill</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">My work</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Masthead-->
+        <header id = "masthead" class="masthead bg-primary text-white text-center" style="background-image:linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.5)),url('assets/img/portfolio/background.jpg'); background-repeat: no-repeat; background-size : 100% 100%;  ">
+            <div  class="container d-flex align-items-center flex-column" style="all:unset;">
+                <!-- Masthead Avatar Image-->
+                <img class="masthead-avatar mb-5" src="assets/img/profile.png" alt="..." />
+                <!-- Masthead Heading-->
+                <h1  class="masthead-heading text-uppercase mb-0">안녕하세요,</h1><br>
+                <h1  class="masthead-heading text-uppercase mb-0">백엔드 개발자 홍범선 입니다.</h1>
+                <!-- Icon Divider-->
+                <div id = "container" class="divider-custom divider-light">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <!-- Masthead Subheading-->
+                <p class="masthead-subheading font-weight-light mb-0">날마다 성장하는 개발자</p>
+            </div>
+        </header>
+        <!-- About Section-->
+        <section class="page-section bg-primary mb-0" id="about" style="background-color: white;">
+            <div class="container" >
+                <!-- About Section Heading-->
+                <h2 class="page-section-heading text-center text-uppercase">About Me</h2>
+                <!-- Icon Divider-->
+                <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <!-- About Section Content-->
+                <div class="row">
+                    <div style="width:60%; margin-left: 20%; text-align: center;"><p class="lead" style="font-size:large;line-height: 80%;">배움과 공유가 너무 즐겁고, 혼자가 아닌 모두 발전하기를 바랍니다. </p>
+                        <p class="lead" style="font-size:large; line-height: 80%;">어렵거나 힘든 일이 있어도 포기하지 않고 끝까지 해낼 때 성취감을 느낍니다.  </p>
+                        <p class="lead" style="font-size:large; line-height: 80%;">어느 곳에 가서도 나 혼자가 아닌 모두를 위한 사람이 되겠습니다.</p>
+                        <p class="lead" style="font-size:large; line-height: 80%;">전체적인 시스템과, Front, Back 능력을 갖춘 풀스택 개발자고 되고 싶습니다.</p></div>
+                    
+                </div>
+                <!-- ======= Resume Section ======= -->
+            
+        
+    <section id="resume" class="resume" style="margin-top: 100px;">
+        <div >
+            <h2 class="page-section-heading text-center text-uppercase">Project && Work Experience && license</h2>
+            <!-- Icon Divider-->
+            <div class="divider-custom">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+  
+          <div class="row">
+            <div class="col-lg-6" data-aos="fade-up">
+              <h3 class="resume-title">Project</h3>
+              <!--대학교-->
+              <div class="resume-item">
+                <h4>영화 예매 사이트 모작</h4>
+                <h5>2020.04 - 020.05(2개월)</h5>
+                <p>Front End 언어만을 사용하여 '롯데시네마' 영화 사이트를 모작한 프로그램</p>          
+              </div>
+
+              <div class="resume-item">
+                <h4>웹 기반 POS 시스템 개발</h4>
+                <h5>2020.06 - 2020.07(2개월)</h5>
+                <p>MariaDB를 사용하여 POS기능과, 연,월,일 매출 기록을 알 수 있는 프로그램</p>  
+          
+              </div>
+              <div class="resume-item">
+                <h4>웹 기반 KIOSK 시스템 개발</h4>
+                <h5>2020.09 - 2020.11(3개월)</h5>
+                <p>고속도로 휴게소 식당처럼 키오스크, 주방, 번호표 기능을 하는 프로그램</p>  
+         
+              </div>
+              <div class="resume-item">
+                <h4>Unity 3D 러닝게임 개발</h4>
+                <h5>2021.03 - 2021.07(5개월)</h5>
+                <p> Unity3D를 사용한 러닝 게임
+                </p>  
+       
+              </div>
+              <div class="resume-item">
+                <h4>멀티 협동 게임 개발</h4>
+                <h5>2021.07 - 2021.11(5개월)</h5>
+                <p> Photon Cloud를 사용한 멀티 협동 게임
+                </p>  
+       
+              </div>
+              <div class="resume-item">
+                <h4>게시판 개발</h4>
+                <h5>2022.01 - 2022.03(3개월)</h5>
+                <p> Spring 프레임워크를 사용한 게시판 개발
+                </p>  
+       
+              </div>
+            </div>
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+              <h3 class="resume-title">Work Experience && License</h3>
+                <!--구디아카데미-->
+                <div class="resume-item">
+                  <h4>컴퓨터활용능력 1급</h4>
+                  <h5>2020.11</h5>
+                  <p></p>
+                  <p>
+                  </p>
+                </div>
+
+                <div class="resume-item">
+                    <h4>워드프로세서 1급</h4>
+                    <h5>2021.03</h5>
+                    <p></p>
+                    <p>
+                    </p>
+                  </div>
+                  <div class="resume-item">
+                    <h4>정보처리기사</h4>
+                    <h5>2021.08</h5>
+                    <p></p>
+                    <p>
+                    </p>
+                  </div>
+                  <div class="resume-item">
+                    <h4>핸디소프트</h4>
+                    <h5>2022.03 - 2023.01</h5>
+                    <p>기록관리시스템 PS팀 근무</p>
+                    <ul>
+                        <li>한국광해광업공단 기록관리시스템 구축(2022.07~2022.12)</li>
+                        <li><span style="font-weight: bolder;">STACK: </span>Spring, JSTL, JQUERY, ORACLE, IBATIS, JAVA, LINUX<br/>
+                        </li>
+
+                  </div>
+            </div>
+          </div>
+  
+        </div>
+    </div>
+      </section>
+      <section class="page-section bg-primary1 mb-0" id="skill">
+        <div class="container">
+            <!-- About Section Heading-->
+            <h2 class="page-section-heading text-center text-uppercase ">Skill</h2>
+            <!-- Icon Divider-->
+            <div class="divider-custom">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <h2 class="page-section-heading text-center" style="font-size:xx-large">Language & Stack & Skill</h2>
+        <p></p>
+        <div class="skillset">
+          <div class="skillset__left">
+            <h3 class="skillset__title">Language</h3>
+            <div class="skill">
+              <div class="skill__description">
+                <span>JAVA</span>
+                <span>80%</span>
+              </div>
+              <div class="skill__bar">
+                <div class="skill__value" style="width: 80%"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <div class="skill__description">
+                <span>JAVASCRIPT</span>
+                <span>80%</span>
+              </div>
+              <div class="skill__bar">
+                <div class="skill__value" style="width: 80%"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <div class="skill__description">
+                <span>HTML</span>
+                <span>70%</span>
+              </div>
+              <div class="skill__bar">
+                <div class="skill__value" style="width: 70%"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <div class="skill__description">
+                <span>CSS</span>
+                <span>50%</span>
+              </div>
+              <div class="skill__bar">
+                <div class="skill__value" style="width: 50%"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <div class="skill__description">
+                <span>C#</span>
+                <span>80%</span>
+              </div>
+              <div class="skill__bar">
+                <div class="skill__value" style="width: 80%"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <div class="skill__description">
+                <span>PYTHON</span>
+                <span>80%</span>
+              </div>
+              <div class="skill__bar">
+                <div class="skill__value" style="width: 80%"></div>
+              </div>
+            </div>
+          </div>
+          <div class="skillset__right">
+            <div class="tools">
+              <h3 class="skillset__title">STACK<span style="font-size:medium;"> 업무에서 사용가능해요</span></h3>
+              <ul class="tools__list">
+                <li><span>JQUERY</span></li>
+                <li><span>JSTL</span></li>
+                <li><span>IBATIS</span></li>
+                <li><span>SPRING</span></li>
+                <li><span>LINUX</span></li>
+                <li><span>ORACLE, MariaDB</span></li>
+                <li><span>JSP</span></li>
+              </ul>
+            </div>
+            <div class="etc">
+              <h3 class="skillset__title">SKILL <span style="font-size:medium;">사용했던 기술들</span></h3>
+              <ul class="etc__list">
+                <li><span>Web Socket, Imgur API, PUN API</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        </div>
+    </section>
+        <!-- Portfolio Section-->
+        <section class="page-section portfolio" id="portfolio">
+            <div class="container">
+                <!-- Portfolio Section Heading-->
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">My Work</h2>
+                <!-- Icon Divider-->
+                <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <!-- Portfolio Grid Items-->
+                <div class="slide_wrap" id="slide_wrap" >
+                    <div class="slide_show">
+                      <div class="slide_list">
+                        <div class="portfolio-item" data-bs-toggle="modal" data-bs-target="#portfolioModal1" style="margin-right: 7px; background-color: #eeeeee; ">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item-caption-content text-center text-white"><i style="font-weight: bolder; color:gold">Spring을 활용한 게시판</i>
+                                </br>
+                                <i>클릭시 상세보기</i>
+                                </div>
+                            </div>
+                            <img class="img-fluid" src="assets/img/portfolio/pj1.png" alt="..."  / style="margin-top: 30px;">
+                        </div>
+
+                        
+                        <div class="portfolio-item" data-bs-toggle="modal" data-bs-target="#portfolioModal2" style="margin-right: 7px; background-color: #eeeeee;">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item-caption-content text-center text-white"><i style="font-weight: bolder; color:gold">고속도로 휴게소 키오스크</i>
+                                </br>
+                                <i>클릭시 상세보기</i>
+                                </div>
+                            </div>
+                            <img class="img-fluid" src="assets/img/portfolio/pj2.png" alt="..." / style="margin-top: 30px;">
+                        </div>
+                        <div class="portfolio-item" data-bs-toggle="modal" data-bs-target="#portfolioModal3" style="margin-right: 7px; background-color: #eeeeee;">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item-caption-content text-center text-white"><i style="font-weight: bolder; color:gold">영화 예매 사이트 모작</i>
+                                </br>
+                                <i>클릭시 상세보기</i>
+                                </div>
+                            </div>
+                            <img class="img-fluid" src="assets/img/portfolio/pj3.png" alt="..." / style="margin-top: 30px;"> 
+                        </div>
+                        <div class="portfolio-item" data-bs-toggle="modal" data-bs-target="#portfolioModal4" style="margin-right: 7px; background-color: #eeeeee;">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item-caption-content text-center text-white"><i style="font-weight: bolder; color:gold">BreakFriendship!!!</i>
+                                </br>
+                                <i>클릭시 상세보기</i>
+                                </div>
+                            </div>
+                            <img class="img-fluid" src="assets/img/portfolio/pj4.png" alt="..." / style="margin-top: 30px;">
+                        </div>
+                        <div class="portfolio-item" data-bs-toggle="modal" data-bs-target="#portfolioModal5" style="margin-right: 7px; background-color:#eeeeee;">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item-caption-content text-center text-white"><i style="font-weight: bolder; color:gold">SHOT GUN 2</i>
+                                </br>
+                                <i>클릭시 상세보기</i>
+                                </div>
+                            </div>
+                            <img class="img-fluid" src="assets/img/portfolio/pj5.png" alt="..." / style="margin-top: 30px;">
+                        </div>
+                        <div class="portfolio-item" data-bs-toggle="modal" data-bs-target="#portfolioModal6" style="margin-right: 7px; background-color: #eeeeee;">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <<div class="portfolio-item-caption-content text-center text-white"><i style="font-weight: bolder; color:gold">POS 시스템</i>
+                                </br>
+                                <i>클릭시 상세보기</i>
+                                </div>
+                            </div>
+                            <img class="img-fluid" src="assets/img/portfolio/pj6.png" alt="..." / style="margin-top: 30px;">
+                        </div>
+                        
+                      </div>
+                    </div>
+                    <div class="slide_btn">
+                      <button class="prev" >prev</button>
+                      <button class="next" >next</button>
+                    </div>
+                  </div>
+            </div>
+        </section>
+        
+        <!-- Contact Section-->
+        <section class="page-section" id="contact">
+            <div class="container">
+                <!-- Contact Section Heading-->
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Contact Me</h2>
+                <!-- Icon Divider-->
+                <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <!-- Contact Section Form-->
+                <section class="aboutme" id="AboutMe_section">
+                    <div class="inner">
+                      
+                      <div class="aboutme_description">
+                        <div class="aboutme_infos">
+                          <div class="info_wraper">
+                            <div class="info_title">연락처</div>
+                            <div class="info_des">010-8298-0199</div>
+                          </div>
+              
+                          <div class="info_wraper">
+                            <div class="info_title">이메일</div>
+                            <div class="info_des">qjatjs123123@naver.com</div>
+                          </div>
+              
+                          <div class="info_wraper">
+                            <div class="info_title">깃허브주소</div>
+                            <div class="info_des"><a href = "https://github.com/qjatjs123123"   target='_blank'>https://github.com/qjatjs123123 </a></div>
+                          </div>
+              
+                          <div class="info_wraper">
+                            <div class="info_title">블로그주소</div>
+                            <div class="info_des"><a href = "https://velog.io/@qjatjs123123" target='_blank'>https://velog.io/@qjatjs123123 </a></div>
+                          </div>
+              
+                        
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+            </div>
+        </section>
+        <!-- Footer-->
+        <footer class="footer text-center">
+            <div class="container">
+                <div class="row">
+                    <!-- Footer Location-->
+                    <div class="col-lg-4 mb-5 mb-lg-0">
+                        <h4 class="text-uppercase mb-4"></h4>
+                        <p class="lead mb-0">
+
+ 
+                        </p>
+                    </div>
+                    <!-- Footer Social Icons-->
+                    <div class="col-lg-4 mb-5 mb-lg-0">
+                        <h4 class="text-uppercase mb-4">Around the Web</h4>
+                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-linkedin-in"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-dribbble"></i></a>
+                    </div>
+                    <!-- Footer About Text-->
+                    <div class="col-lg-4">
+                        <h4 class="text-uppercase mb-4"></h4>
+                        <p class="lead mb-0">
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+       
+        <!-- Portfolio Modals-->
+        <!-- Portfolio Modal 1-->
+        <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" aria-labelledby="portfolioModal1" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content" style="background-color:blanchedalmond">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">게시판 시연영상</h2>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <!-- Portfolio Modal - Image-->
+                                    <iframe width="700" height="400" src="https://www.youtube.com/embed/AlJBiZWza0w" title="YouTube video player" frameborder="10" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" style="border-radius: 1rem;" allowfullscreen></iframe>
+                                    <!-- Portfolio Modal - Text-->
+                                    <p class="mb-4" style="margin-top: 20px; text-align: left;"><span style="font-size: larger; font-weight: bolder;">패턴 : </span><span style="font-size: larger;">MVC</span>
+                                    <br><span style="font-size: larger; font-weight: bolder;">사용 프로그램 : </span><span style="font-size: larger;">Eclipse, MariaDB, Tomcat, Github</span>
+                                    <br><span style="font-size: larger; font-weight: bolder;">언어 : </span><span style="font-size: larger;">Java, Html, Css, JavaScript</span>
+                                    <br><span style="font-size: larger; font-weight: bolder;">스택 : </span><span style="font-size: larger;">Jquery, Jstl, Spring</span>
+                                    <br><span style="font-size: larger; font-weight: bolder;">기술 : </span><span style="font-size: larger;">Gmail API, Bcrypt, Ajax</span>
+                                    <br><span style="font-size: larger; font-weight: bolder;">프로그램 설명 : </span><span style="font-size: larger;">회원가입, 아이디 찾기, 비밀번호 찾기 기능이 있고
+                                        게시판을 수정, 삭제, 추가하는 기능이 있습니다. 또한 게시판마다 댓글을 추가, 삭제하는 기능이 있습니다.
+                                    </span>
+                                    </p>
+                                    <a href = "https://github.com/qjatjs123123/Spring_notice_board" class="btn btn-primary"  target='_blank'>Github 바로가기</a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio Modal 2-->
+        <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" aria-labelledby="portfolioModal2" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content" style="background-color:blanchedalmond">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">키오스크 프로그램 시연영상</h2>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <!-- Portfolio Modal - Image-->
+                                    <iframe width="700" height="400" style="border-radius: 1rem;" src="https://www.youtube.com/embed/vh9ZiJ5MH9I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                    <!-- Portfolio Modal - Text-->
+                                    <span style="font-size: larger; font-weight: bolder;">사용 프로그램 : </span><span style="font-size: larger;">Eclipse, MariaDB, Tomcat, Github</span>
+                                    <br><span style="font-size: larger; font-weight: bolder;">언어 : </span><span style="font-size: larger;">Java, Html, Css, JavaScript</span>
+                                    <br><span style="font-size: larger; font-weight: bolder;">기술 : </span><span style="font-size: larger;">Imgur API, WebSocket, Ajax</span>
+                                    <br><span style="font-size: larger; font-weight: bolder;">프로그램 설명 : </span><span style="font-size: larger;">회원가입, 아이디 찾기, 비밀번호 찾기 기능이 있습니다. 메뉴를 등록하고
+                                        메뉴명, 가격을 수정할 수 있으며 삭제 또한 할 수 있습니다. 년/월/일 별로 매출 판매액을 확인 할 수 있습니다. 손님들이 주문 할 수 있는 기능이 있고, 주문한 음식이 표시되는 기능도 있습니다. 조리가
+                                        완료된 음식의 주문 번호를 출력하는 기능이 있습니다. 이 프로그램은 고속도로 휴게소 식당에서 영감을 받아 제작하였습니다.
+                                        
+                                    </span>
+                                    </p>
+                                    <a href = "https://github.com/qjatjs123123/KIOSK_RESTAURANT" class="btn btn-primary"  target='_blank'>Github 바로가기</a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio Modal 3-->
+        <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" aria-labelledby="portfolioModal3" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content" style="background-color:blanchedalmond">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">영화 예매 사이트 모작 시연영상</h2>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <!-- Portfolio Modal - Image-->
+                                    <iframe width="700" height="400" style="border-radius: 1rem;" src="https://www.youtube.com/embed/qsdLthln5Bs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                    <!-- Portfolio Modal - Text-->
+                                    <span style="font-size: larger; font-weight: bolder;">사용 프로그램 : </span><span style="font-size: larger;">Eclipse, Github</span>
+                                    <br><span style="font-size: larger; font-weight: bolder;">언어 : </span><span style="font-size: larger;">Html, Css, JavaScript</span>
+                                    
+                                    <br><span style="font-size: larger; font-weight: bolder;">프로그램 설명 : </span><span style="font-size: larger;">한 영화 예매 사이트 모작한 프로젝트로 예고편을 볼 수 있으며, 선택한 인원수에 맞게
+                                        좌석을 선택해야 한다. 이미 존재한 좌석을 선택할 경우 경고 메시지가 뜨고 모든 조건을 충족한다면 영화 예매표 출력과 함께 예매가 된다.
+                                        
+                                    </span>
+                                    </p>
+                                    <a href = "https://github.com/qjatjs123123/KIOSK_MOVIE" class="btn btn-primary"  target='_blank'>Github 바로가기</a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio Modal 4-->
+        <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" aria-labelledby="portfolioModal4" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content" style="background-color:blanchedalmond">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">BreakFriendship 시연 영상</h2>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <!-- Portfolio Modal - Image-->
+                                    <iframe width="700" height="400" style="border-radius: 1rem;" src="https://www.youtube.com/embed/546uUgdAwZw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                    <!-- Portfolio Modal - Text-->
+                                    <!-- Portfolio Modal - Text-->
+                                
+                                        <br><span style="font-size: larger; font-weight: bolder;">사용 프로그램 : </span><span style="font-size: larger;">Unity, Github</span>
+                                        <br><span style="font-size: larger; font-weight: bolder;">언어 : </span><span style="font-size: larger;">C#</span>
+                                        <br><span style="font-size: larger; font-weight: bolder;">스택 : </span><span style="font-size: larger;">PUN API</span>
+                                        <br><span style="font-size: larger; font-weight: bolder;">기술 : </span><span style="font-size: larger;">Photon Cloud, Pun</span>
+                                        <br><span style="font-size: larger; font-weight: bolder;">프로그램 설명 : </span><span style="font-size: larger;"> 4인 멀티 협동 게임입니다. 서버는 Photon Cloud를 사용하였고, Unity와 Photon Sever간에 API인 PUN을 사용하여
+                                            멀티 게임을 구현하였습니다. 방 생성 기능, 방장 권한 강퇴 기능, 방장 위임 기능, 네트워크 상태 표시 화면 기능을 만들었으며 총 7 라운드 게임을 만들었습니다.
+                                            1Round는 튜토리얼, 2Round는 총알 피하기, 3Round는 타임 어택, 4Round는 무궁화 꽃이 피었습니다. 5Round는 레이저 막기, 6Round는 일심동체, 7Round 협심이 존재합니다.
+                                        </span>
+                                        </p>
+                                        <a href = "https://github.com/qjatjs123123/Remaster_Unity2D_BreakFriendShip" class="btn btn-primary"  target='_blank'>Github 바로가기</a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio Modal 5-->
+        <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" aria-labelledby="portfolioModal5" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content" style="background-color:blanchedalmond">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">SHOT GUN 2 시연 영상</h2>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <!-- Portfolio Modal - Image-->
+                                    
+                                    <iframe width="700" height="400" style="border-radius: 1rem;" src="https://www.youtube.com/embed/swMfbWtZ31Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+                                    <!-- Portfolio Modal - Text-->
+                                    <!-- Portfolio Modal - Text-->
+                                
+                                        <br><span style="font-size: larger; font-weight: bolder;">사용 프로그램 : </span><span style="font-size: larger;">Unity3D, Github</span>
+                                        <br><span style="font-size: larger; font-weight: bolder;">언어 : </span><span style="font-size: larger;">C#</span>                             
+                                        <br><span style="font-size: larger; font-weight: bolder;">프로그램 설명 : </span><span style="font-size: larger;"> 
+                                        </span> ALTF4라는 러닝 게임을 모티브로 한 싱글 러닝 게임으로 각종 장애물을 피해서 보물을 찾는 게임입니다. 움직이는 문, 트랩피하기, 굴러떨어지는 돌 피하기, 화살피하기, 
+                                        식인 상어 피하기, 대포 피하기 등, 여러 장애물이 존재합니다.
+                                        </p>
+                                        <a href = "https://github.com/qjatjs123123/Remaster_Unity3D_RunningGame" class="btn btn-primary"  target='_blank'>Github 바로가기</a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio Modal 6-->
+        <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" aria-labelledby="portfolioModal6" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content" style="background-color:blanchedalmond">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">POS기 시연 영상</h2>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <!-- Portfolio Modal - Image-->
+                                    
+                                    <iframe width="700" height="400" style="border-radius: 1rem;" src="https://www.youtube.com/embed/EU0GWIFPT30" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+                                    <span style="font-size: larger; font-weight: bolder;">사용 프로그램 : </span><span style="font-size: larger;">Eclipse, MariaDB, Tomcat, Github</span>
+                                    <br><span style="font-size: larger; font-weight: bolder;">언어 : </span><span style="font-size: larger;">Java, Html, Css, JavaScript</span>
+                                    <br><span style="font-size: larger; font-weight: bolder;">기술 : </span><span style="font-size: larger;">Imgur API,  Ajax</span>
+                                    <br><span style="font-size: larger; font-weight: bolder;">프로그램 설명 : </span><span style="font-size: larger;">회원가입, 아이디 찾기, 비밀번호 찾기 기능이 있습니다. 메뉴를 등록하고
+                                        메뉴명, 가격을 수정할 수 있으며 삭제 또한 할 수 있습니다. 년/월/일 별로 매출 판매액을 확인 할 수 있습니다. 종업원이 주문받은 내역을 POS기에 저장할 수 있습니다. 음식점 POS기 처럼 종업원의 편의를 위해서
+                                        맞춘 기능들이 제공됩니다.
+                                        
+                                    </span>
+                                    </p>
+                                    <a href = "https://github.com/qjatjs123123/POS" class="btn btn-primary"  target='_blank'>Github 바로가기</a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    </body>
+</html>

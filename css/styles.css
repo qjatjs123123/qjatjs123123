@@ -10,7 +10,203 @@
  * Copyright 2011-2022 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+/*--------------------------------------------------------------
+
+
+
+
+
+.aboutme {
+  position: relative;
+  background-color: #fff;
+  margin:0 auto 2rem;
+  width: 100%;
+  /* max-width: 71.25rem; */
+  padding: 4rem 2rem;
+  margin: 2 0 0 auto;
+}
+
+.aboutme .aboutme_header{
+  font-family: Black Han Sans,sans-serif;
+  padding: 45px 0 30px 0 ;
+  font-weight: 200;
+  font-size: 3rem;
+  text-align: center;
+  word-break: kiip-all;
+  border-bottom: .01rem solid #fff;
+}
+
+.aboutme .aboutme_description {
+  display:flex;
+  flex-flow: row wrap;
+}
+
+.aboutme .aboutme_description .aboutme_infos{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  font-family: Noto Sans KR, sans-serif;
+  width: 100%;
+}
+
+.aboutme .aboutme_description .aboutme_infos .info_wraper{
+  
+  display:flex;
+  width: 50%;
+  margin: 0 auto;
+  padding-bottom: 10px;
+}
+
+.aboutme .aboutme_description .aboutme_infos .info_wraper .info_title{
+  width: 100%;
+  margin-bottom: .5rem;
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.aboutme .aboutme_description .aboutme_infos .info_wraper .info_des{
+  width: 100%;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+/* Skiils */
+#skills {
+  background-color: var(--color-yellow);
+}
+
+.skillset {
+  background-color: var(--color-light-grey);
+  display: flex;
+  color: var(--color-light-white);
+  margin: 20px 0;
+}
+
+.skillset__title {
+  color: var(--color-white);
+}
+
+.skillset__left {
+  background-color: var(--color-dark-grey);
+  flex-basis: 60%;
+  padding: 20px 40px;
+}
+
+.skill {
+  margin-bottom: 32px;
+}
+
+.skill__description {
+  display: flex;
+  justify-content: space-between;
+}
+
+.skill__bar {
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-grey);
+}
+
+.skill__value {
+  height: 3px;
+  background-color: var(--color-orange);
+}
+
+.skillset__right {
+  flex-basis: 40%;
+}
+
+.tools {
+  background-color: var(--color-grey);
+  height: 65%;
+}
+
+.tools,
+.etc {
+  padding: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .skillset {
+    flex-direction: column;
+  }
+}
+
+# Resume
+--------------------------------------------------------------*/
+.resume .resume-title {
+  font-size: 26px;
+  font-weight: 700;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #050d18;
+}
+
+.resume .resume-item {
+  font-size: 1.rem;
+  padding: 0 0 20px 20px;
+  margin-top: -2px;
+  border-left: 2px solid #1f5297;
+  position: relative;
+}
+
+.resume .resume-item h4 {
+  line-height: 18px;
+  font-size: 1.15rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
+  color: #050d18;
+  margin-bottom: 10px;
+}
+
+.resume .resume-item h5 {
+  font-size: 1.15rem;
+  background: #e4edf9;
+  padding: 5px 15px;
+  display: inline-block;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.resume .resume-item ul {
+  padding-left: 20px;
+}
+
+.resume .resume-item ul li {
+  padding-bottom: 10px;
+}
+
+.resume .resume-item:last-child {
+  padding-bottom: 0;
+}
+
+.resume .resume-item::before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50px;
+  left: -9px;
+  top: 0;
+  background: #fff;
+  border: 2px solid #1f5297;
+}
+
+
 :root {
+  --color-white: #ffffff;
+  --color-light-white: #eeeeee;
+  --color-dark-white: #bdbdbd;
+  --color-pink: #fe918d;
+  --color-dark-pink: #ff6863;
+  --color-dark-grey: #4d4d4d;
+  --color-grey: #616161;
+  --color-light-grey: #7c7979;
+  --color-blue: #73aace;
+  --color-yellow: #fff7d1;
+  --color-orange: #feb546;
+  --color-black: #000000;
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
   --bs-purple: #6f42c1;
@@ -601,6 +797,7 @@ progress {
 .img-fluid {
   max-width: 100%;
   height: auto;
+  
 }
 
 .img-thumbnail {
@@ -1290,6 +1487,7 @@ progress {
   .col-lg-6 {
     flex: 0 0 auto;
     width: 50%;
+ 
   }
   .col-lg-7 {
     flex: 0 0 auto;
@@ -7533,7 +7731,7 @@ textarea.form-control-lg {
 
 .mx-2 {
   margin-right: 0.5rem !important;
-  margin-left: 0.5rem !important;
+  margin-left: 0.5rem !important;x-auto
 }
 
 .mx-3 {
@@ -8127,14 +8325,20 @@ textarea.form-control-lg {
 
 .bg-primary {
   --bs-bg-opacity: 1;
-  background-color: rgba(var(--bs-primary-rgb), var(--bs-bg-opacity)) !important;
+ /* background-color: rgba(var(--bs-primary-rgb), var(--bs-bg-opacity)) !important;*/
+}
+.bg-primary1 {
+  --bs-bg-opacity: 1;
+  background-color:beige;
+ 
 }
 
 .bg-secondary {
-  --bs-bg-opacity: 1;
-  background-color: rgba(var(--bs-secondary-rgb), var(--bs-bg-opacity)) !important;
-}
+  --bs-bg-opacity: 0.5;
+  background-color: rgba(0, 0, 0, 0.5);
 
+}
+.nav-fixed .pc-menu .nav-right { background:none; }
 .bg-success {
   --bs-bg-opacity: 1;
   background-color: rgba(var(--bs-success-rgb), var(--bs-bg-opacity)) !important;
@@ -10988,8 +11192,8 @@ html {
     padding-bottom: 6rem;
   }
   .masthead .masthead-heading {
-    font-size: 4rem;
-    line-height: 3.5rem;
+    font-size: 3rem;
+    /*line-height: 3.5rem;*/
   }
   .masthead .masthead-subheading {
     font-size: 1.5rem;
@@ -11000,7 +11204,7 @@ html {
   position: relative;
   display: block;
   max-width: 25rem;
-  border-radius: 0.5rem;
+  border-radius: 14px;
   overflow: hidden;
 }
 .portfolio .portfolio-item .portfolio-item-caption {
@@ -11009,7 +11213,7 @@ html {
   left: 0;
   transition: all 0.2s ease-in-out;
   opacity: 0;
-  background-color: rgba(26, 188, 156, 0.9);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 .portfolio .portfolio-item .portfolio-item-caption:hover {
   opacity: 1;
@@ -11037,7 +11241,7 @@ html {
 .footer {
   padding-top: 5rem;
   padding-bottom: 5rem;
-  background-color: #2c3e50;
+  background-color:#ffc107;
   color: #fff;
 }
 
