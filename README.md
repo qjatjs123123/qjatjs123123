@@ -36,6 +36,7 @@
 [![Anurag's github stats](https://github-readme-stats.vercel.app/api?username=qjatjs123123)](https://github.com/anuraghazra/github-readme-stats)
 ### 💬 Most Language
 [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=qjatjs123123)](https://github.com/anuraghazra/github-readme-stats)
+### 🔭 Solved.ac Stats
 [![Solved.ac Profile](http://mazassumnida.wtf/api/v2/generate_badge?boj=qjatjs123123)](https://solved.ac/qjatjs123123/)
 <!--
 **qjatjs123123/qjatjs123123** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
