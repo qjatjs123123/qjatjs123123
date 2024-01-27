@@ -34,8 +34,7 @@
 
 #### Study
 <p>
-  <img src="https://img.shields.io/badge/Unreal Engine-0E1128?style=for-the-badge&logo=Unreal Engine&logoColor=white"> 
-  <img src="https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=C++&logoColor=white">
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=TypeScript&logoColor=white"> 
 </p>
 
 
